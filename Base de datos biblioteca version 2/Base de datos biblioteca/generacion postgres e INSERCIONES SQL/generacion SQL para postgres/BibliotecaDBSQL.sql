@@ -74,7 +74,6 @@ create table LIBRO (
    COD_PAIS             INT4                 null,
    COD_TIPOLIBRO        INT4                 null,
    COD_EDITORIAL        VARCHAR(4)           null,
-   EDI_COD_EDITORIAL    VARCHAR(4)           null,
    ISBN                 VARCHAR(50)          null,
    TITULO               VARCHAR(100)         null,
    FECHAPUBLICACION     DATE                 null,

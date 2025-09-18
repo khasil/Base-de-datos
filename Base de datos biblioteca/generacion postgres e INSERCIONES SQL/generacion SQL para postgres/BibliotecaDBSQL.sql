@@ -458,8 +458,6 @@ INSERT INTO librosporExistencia_estado VALUES (3, 1);
 INSERT INTO librosporExistencia_estado VALUES (4, 3);
 INSERT INTO librosporExistencia_estado VALUES (5, 1);
 
-select * from librosporexistencia
-
 --Insertar en usuario
 INSERT INTO usuario VALUES (1, 'Carlos', 'Pérez', '12345678', '1990-04-10', 3001234567, 'Calle 10 #20-30', 'carlos@mail.com');
 INSERT INTO usuario VALUES (2, 'María', 'Gómez', '87654321', '1985-07-21', 3107654321, 'Carrera 15 #45-67', 'maria@mail.com');

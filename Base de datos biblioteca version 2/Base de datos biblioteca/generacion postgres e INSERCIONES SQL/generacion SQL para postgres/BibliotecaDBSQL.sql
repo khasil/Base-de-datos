@@ -377,11 +377,6 @@ alter table LIBRO
       references EDITORIAL (COD_EDITORIAL)
       on delete restrict on update restrict;
 
-alter table LIBRO
-   add constraint FK_LIBRO_SE_LE_ASO_EDITORIA foreign key (EDI_COD_EDITORIAL)
-      references EDITORIAL (COD_EDITORIAL)
-      on delete restrict on update restrict;
-
 alter table LIBROSPOREXISTENCIA
    add constraint FK_LIBROSPO_RELACION_LIBRO foreign key (COD_LIBRO)
       references LIBRO (COD_LIBRO)
@@ -473,11 +468,11 @@ INSERT INTO AUTOR (COD_AUTOR, NOMBRE_AUTOR, NACIONALIDAD, ANIO_NACIMIENTO) VALUE
 INSERT INTO AUTOR (COD_AUTOR, NOMBRE_AUTOR, NACIONALIDAD, ANIO_NACIMIENTO) VALUES (5, 'Yuval Noah Harari', 'Israelí', 1976);
 
 -- Insertar en LIBRO Representa los títulos de libros abstractos (no copias físicas), incluyendo ISBN, título y edición para catalogación general.
-INSERT INTO LIBRO (COD_LIBRO, COD_PAIS, COD_TIPOLIBRO, COD_EDITORIAL, ISBN, TITULO, FECHAPUBLICACION, EDICION) VALUES (1, 5, 1, 'ED01', 'ED01', '978-84-376-0494-7', 'Cien Años de Soledad', '1967-05-30', 'Primera');
-INSERT INTO LIBRO (COD_LIBRO, COD_PAIS, COD_TIPOLIBRO, COD_EDITORIAL, ISBN, TITULO, FECHAPUBLICACION, EDICION) VALUES (2, 2, 3, 'ED02', 'ED02', '978-0-307-27767-1', 'The Da Vinci Code', '2003-03-18', 'Primera');
-INSERT INTO LIBRO (COD_LIBRO, COD_PAIS, COD_TIPOLIBRO, COD_EDITORIAL, ISBN, TITULO, FECHAPUBLICACION, EDICION) VALUES (3, 1, 1, 'ED03', 'ED03', '978-84-08-04942-5', 'La Sombra del Viento', '2001-04-01', 'Primera');
-INSERT INTO LIBRO (COD_LIBRO, COD_PAIS, COD_TIPOLIBRO, COD_EDITORIAL, ISBN, TITULO, FECHAPUBLICACION, EDICION) VALUES (4, 1, 4, 'ED04', 'ED04', '978-84-89618-02-2', 'Don Quijote de la Mancha', '1605-01-16', 'Clásica');
-INSERT INTO LIBRO (COD_LIBRO, COD_PAIS, COD_TIPOLIBRO, COD_EDITORIAL, ISBN, TITULO, FECHAPUBLICACION, EDICION) VALUES (5, 2, 3, 'ED05', 'ED05', '978-0-452-28423-4', '1984', '1949-06-08', 'Primera');
+INSERT INTO LIBRO (COD_LIBRO, COD_PAIS, COD_TIPOLIBRO, COD_EDITORIAL, ISBN, TITULO, FECHAPUBLICACION, EDICION) VALUES (1, 5, 1, 'ED01', '978-84-376-0494-7', 'Cien Años de Soledad', '1967-05-30', 'Primera');
+INSERT INTO LIBRO (COD_LIBRO, COD_PAIS, COD_TIPOLIBRO, COD_EDITORIAL, ISBN, TITULO, FECHAPUBLICACION, EDICION) VALUES (2, 2, 3, 'ED02', '978-0-307-27767-1', 'The Da Vinci Code', '2003-03-18', 'Primera');
+INSERT INTO LIBRO (COD_LIBRO, COD_PAIS, COD_TIPOLIBRO, COD_EDITORIAL, ISBN, TITULO, FECHAPUBLICACION, EDICION) VALUES (3, 1, 1, 'ED03','978-84-08-04942-5', 'La Sombra del Viento', '2001-04-01', 'Primera');
+INSERT INTO LIBRO (COD_LIBRO, COD_PAIS, COD_TIPOLIBRO, COD_EDITORIAL, ISBN, TITULO, FECHAPUBLICACION, EDICION) VALUES (4, 1, 4, 'ED04', '978-84-89618-02-2', 'Don Quijote de la Mancha', '1605-01-16', 'Clásica');
+INSERT INTO LIBRO (COD_LIBRO, COD_PAIS, COD_TIPOLIBRO, COD_EDITORIAL, ISBN, TITULO, FECHAPUBLICACION, EDICION) VALUES (5, 2, 3, 'ED05', '978-0-452-28423-4', '1984', '1949-06-08', 'Primera');
 
 -- Insertar en LIBROSPOREXISTENCIA Representa las copias físicas o inventario de libros disponibles, con códigos de inventario y ubicaciones para gestión de stock.
 INSERT INTO LIBROSPOREXISTENCIA (COD_EXISTENCIA, COD_LIBRO, COD_INVENTARIO, UBICACION, FECHA_ADQUISICION) VALUES (1, 1, 'INV001', 'Sala General - Estante A', '2015-03-10');
@@ -541,3 +536,27 @@ INSERT INTO MULTA (COD_MULTA, COD_PRESTAMO, MONTO, FECHA_ASIGNACION, DIAS_MORA, 
 INSERT INTO MULTA (COD_MULTA, COD_PRESTAMO, MONTO, FECHA_ASIGNACION, DIAS_MORA, FECHA_PAGO, ESTADO_MULTA) VALUES (3, 3, 15.00, '2023-12-28', 1, NULL, 'Pendiente');
 INSERT INTO MULTA (COD_MULTA, COD_PRESTAMO, MONTO, FECHA_ASIGNACION, DIAS_MORA, FECHA_PAGO, ESTADO_MULTA) VALUES (4, 4, 20.00, '2024-01-21', 1, '2024-01-25', 'Pagada');
 INSERT INTO MULTA (COD_MULTA, COD_PRESTAMO, MONTO, FECHA_ASIGNACION, DIAS_MORA, FECHA_PAGO, ESTADO_MULTA) VALUES (5, 5, 25.00, '2024-02-26', 1, NULL, 'Pendiente');
+
+SELECT
+p.cod_prestamo,
+l.titulo,
+l.isbn,
+l.fechapublicacion,
+le.cod_inventario,
+le.ubicacion,
+u.nombre_usuario,
+u.apellido,
+tp.tipoprestamo AS tipo_prestamo,
+p.fecha_prestamo,
+p.hora_prestamo,
+p.fecha_devolucion,
+p.hora_devolucion
+FROM prestamo p
+JOIN librosporexistencia le
+ON p.cod_existencia = le.cod_existencia
+JOIN libro l
+ON le.cod_libro = l.cod_libro
+JOIN usuario u
+ON p.cod_usuario = u.cod_usuario
+JOIN tipoprestamo tp
+ON p.cod_tipoprestamo = tp.cod_tipoprestamo;

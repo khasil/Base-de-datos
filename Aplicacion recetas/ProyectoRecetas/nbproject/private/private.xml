@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/dao/RecetaDAO.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/dao/CategoriaDAO.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/dao/IngredienteDAO.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/vista/DialogoUsuario.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/modelo/Favorito.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/vista/VistaPrincipal.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/dao/FavoritoDAO.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/util/DescargadorImagenes.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/modelo/Receta.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/controlador/App.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/dao/UsuarioDAO.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/modelo/Ingrediente.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/database/Conexion.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/modelo/RecetaIngrediente.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/modelo/Usuario.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/modelo/Categoria.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/util/ManejadorImagen.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/vista/DialogoReceta.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/vista/DialogoCategoria.java</file>
+            <file>file:/C:/Users/khasil/Documents/NetBeansProjects/ProyectoRecetas/src/controlador/ControladorRecetas.java</file>
+        </group>
+    </open-files>
+</project-private>
